@@ -1,0 +1,40 @@
+.box {
+  width: 96px;
+  height: 96px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#generator {
+  cursor: pointer;
+  background-color: bisque;
+  user-select: none;
+}
+
+#generator:active {
+  transform: translate(2px, 2px);
+  filter: brightness(105%);
+}
+
+#generated {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.animation {
+  --diffX: 0;
+  --diffY: 0;
+  animation: move 1s;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(calc(var(--diffX) * 1px), calc(var(--diffY) * 1px));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
